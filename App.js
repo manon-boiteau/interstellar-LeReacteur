@@ -1,4 +1,4 @@
-// Imports
+// React & React Native - Imports
 import React from "react";
 import {
   SafeAreaView,
@@ -11,11 +11,24 @@ import {
   StyleSheet,
 } from "react-native";
 
-// Packages
+// Packages from Expo
 import { StatusBar } from "expo-status-bar";
 import Constants from "expo-constants";
 // console.log(Constants.statusBarHeight);
 import { Ionicons } from "@expo/vector-icons";
+
+// Colors - Imports
+import colors from "./assets/colors";
+const {
+  btnBlue,
+  greyText,
+  bgGrey,
+  viewGrey1,
+  viewGrey2,
+  cardGrey,
+  iconYellow,
+  iconGreen,
+} = colors;
 
 const App = () => {
   return (
@@ -33,7 +46,7 @@ const App = () => {
           </View>
         </View>
 
-        {/* Main view 1 */}
+        {/* Main view 1 - Movie details */}
         <View style={[styles.view, styles.view1]}>
           <View style={styles.wrapper}>
             <Text style={[styles.h2, styles.whiteText]}>Interstellar</Text>
@@ -77,8 +90,14 @@ const App = () => {
 
             <View style={styles.bloc3}>
               <View style={styles.icon1Bloc}>
-                <Ionicons size={30} color="#E7BA1E" name="ios-star" />
-                <Text style={styles.whiteText}>8.6/10</Text>
+                <Ionicons size={30} color={iconYellow} name="ios-star" />
+                <View style={styles.rateText}>
+                  <Text style={[styles.whiteText, styles.rateTextBold]}>
+                    8.6
+                  </Text>
+                  <Text style={styles.whiteText}>/10</Text>
+                </View>
+
                 <Text style={styles.greyText}>1.1M</Text>
               </View>
               <View style={styles.icon2Bloc}>
@@ -90,7 +109,7 @@ const App = () => {
                   size={30}
                   color="red"
                   name="square-sharp"
-                  color="#62C84E"
+                  color={iconGreen}
                 />
                 <Text style={styles.iconAbsolute}>74</Text>
                 <Text style={styles.whiteText}>Metascore</Text>
@@ -100,7 +119,7 @@ const App = () => {
           </View>
         </View>
 
-        {/* Main view 2 */}
+        {/* Main view 2 - Actors cards */}
         <View style={[styles.view, styles.view2]}>
           <View style={styles.wrapper}>
             <View style={styles.seeAll}>
@@ -167,7 +186,7 @@ const App = () => {
           </View>
         </View>
 
-        {/* Main view 3 */}
+        {/* Main view 3 - Movie's direction */}
         <View style={styles.view3}>
           <View style={styles.wrapper}>
             <View style={styles.director}>
@@ -193,7 +212,7 @@ export default App;
 const styles = StyleSheet.create({
   // Global rules
   screen: {
-    backgroundColor: "#1E1E1E",
+    backgroundColor: bgGrey,
     flex: 1,
   },
   scrollView: {
@@ -206,26 +225,28 @@ const styles = StyleSheet.create({
     marginRight: "auto",
     width: "90%",
   },
-  // Text color
+  // ----- Text color
   greyText: {
-    color: "#828282",
+    color: greyText,
   },
   whiteText: {
     color: "white",
   },
   blueText: {
-    color: "#0577BD",
+    color: btnBlue,
+    fontWeight: "bold",
   },
   // ----- Titles
   h2: {
     fontSize: 28,
+    fontWeight: "300",
   },
   h3: {
     fontSize: 16,
   },
   // ----- Buttons
   btnBlue: {
-    backgroundColor: "#0577BD",
+    backgroundColor: btnBlue,
     padding: 10,
     alignItems: "center",
     borderRadius: 5,
@@ -233,10 +254,11 @@ const styles = StyleSheet.create({
 
   // Header
   header: {
-    backgroundColor: "#393939",
+    backgroundColor: viewGrey2,
     width: "100%",
     height: 60,
     justifyContent: "center",
+    marginBottom: 15,
   },
   imgLogo: {
     height: 60,
@@ -245,7 +267,7 @@ const styles = StyleSheet.create({
 
   // Views
   view: {
-    backgroundColor: "#222222",
+    backgroundColor: viewGrey1,
     width: "100%",
     // height: 300,
   },
@@ -324,7 +346,7 @@ const styles = StyleSheet.create({
     height: 230,
   },
   card: {
-    backgroundColor: "#2A2A2A",
+    backgroundColor: cardGrey,
     marginRight: 10,
     paddingBottom: 15,
     alignItems: "center",
@@ -332,6 +354,14 @@ const styles = StyleSheet.create({
   cardDetails: {
     paddingTop: 10,
     width: "95%",
+  },
+  rateText: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  rateTextBold: {
+    fontWeight: "bold",
+    fontSize: 16,
   },
 
   // Main view 3 - Direction
