@@ -17,7 +17,7 @@ IMBd Interstellar clone made at [Le Reacteur](https://www.lereacteur.io/) Boot
 ---
 
 ✘ Do integration (React Native)  
-✘ Use Expo components (StatusBar, Contants, vector-icons)
+✘ Use Expo components (StatusBar, Contants, vector-icons)  
 ✘ Realize a scrollbar horizontal
 
 ## 📚 Stacks
